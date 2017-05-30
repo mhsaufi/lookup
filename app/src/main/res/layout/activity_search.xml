@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.myrapid.SearchActivity">
+
+    <ImageView
+        android:id="@+id/bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTintMode="multiply"
+        android:scaleType="fitXY"
+        android:tint="@android:color/darker_gray"
+        android:tintMode="multiply" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/logorapidkl" />
+
+        <AutoCompleteTextView
+            android:id="@+id/from"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/curvy_edit_text"
+            android:gravity="center_vertical|center_horizontal"
+            android:hint="From" />
+
+        <AutoCompleteTextView
+            android:id="@+id/to"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/curvy_edit_text"
+            android:gravity="center_vertical|center_horizontal"
+            android:hint="To" />
+
+        <Button
+            android:id="@+id/search_trip"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/curvy_button"
+            android:text="SEARCH"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/view_route_map"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/curvy_bg_station_kj"
+            android:text="VIEW ROUTE"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

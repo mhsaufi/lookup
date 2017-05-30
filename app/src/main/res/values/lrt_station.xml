@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="lrt_stop">
+        <item>KJ Gombak</item>
+        <item>KJ Taman Melati</item>
+        <item>KJ Wangsa Maju</item>
+        <item>KJ Sri Rampai</item>
+        <item>KJ Setiawangsa</item>
+        <item>KJ Jelatek</item>
+        <item>KJ Dato Keramat</item>
+        <item>KJ Damai</item>
+        <item>KJ Ampang Park</item>
+        <item>KJ KLCC</item>
+        <item>KJ Kampung Baru</item>
+        <item>KJ Dang Wangi</item>
+        <item>KJ Masjid Jamek</item>
+        <item>KJ Pasar Seni</item>
+        <item>KJ KL Sentral</item>
+        <item>KJ Bangsar</item>
+        <item>KJ Abdullah Hukum</item>
+        <item>KJ Kerinchi</item>
+        <item>KJ Universiti</item>
+        <item>KJ Taman Jaya</item>
+        <item>KJ Asia Jaya</item>
+        <item>KJ Taman Paramount</item>
+        <item>KJ Taman Bahagia</item>
+        <item>KJ Kelana Jaya</item>
+        <item>KJ Lembah Subang</item>
+        <item>KJ Ara Damansara</item>
+        <item>KJ Glenmarie</item>
+        <item>KJ Subang Jaya</item>
+        <item>KJ SS15</item>
+        <item>KJ SS18</item>
+        <item>KJ USJ7</item>
+        <item>KJ Taipan</item>
+        <item>KJ Wawasan</item>
+        <item>KJ USJ21</item>
+        <item>KJ Alam Megah</item>
+        <item>KJ Subang Alam</item>
+        <item>KJ Putra Height</item>
+        <item>AG Ampang</item>
+        <item>AG Cahaya</item>
+        <item>AG Cempaka</item>
+        <item>AG Pandan Indah</item>
+        <item>AG Pandan Jaya</item>
+        <item>AG Maluri</item>
+        <item>AG Miharja</item>
+        <item>AG Chan Sow Lin</item>
+        <item>AG Pudu</item>
+        <item>AG Hang Tuah</item>
+        <item>AG Plaza Rakyat</item>
+        <item>AG Masjid Jamek</item>
+        <item>AG Bandaraya(SP6)</item>
+        <item>AG Sultan Ismail</item>
+        <item>AG PWTC</item>
+        <item>AG Titiwangsa</item>
+        <item>AG Sentul</item>
+        <item>AG Sentul Timur</item>
+        <item>AG Cheras</item>
+        <item>AG Salak Selatan</item>
+        <item>AG Bandar Tun Razak</item>
+        <item>AG Bandar Tasik Selatan</item>
+        <item>AG Sungai Besi</item>
+        <item>AG Bukit Jalil</item>
+        <item>AG Sri Petaling</item>
+        <item>AG Awan Besar</item>
+        <item>AG Muhibbah</item>
+        <item>AG Alam Sutera</item>
+        <item>AG Kinrara BK5</item>
+        <item>AG IOI Puchong</item>
+        <item>AG Pusat Bandar Puchong</item>
+        <item>AG Taman Perindustrian Puchong</item>
+        <item>AG Bandar Puteri</item>
+        <item>AG Putra Heights</item>
+    </string-array>
+</resources>
