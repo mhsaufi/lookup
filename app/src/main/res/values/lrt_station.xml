@@ -72,5 +72,404 @@
         <item>AG Taman Perindustrian Puchong</item>
         <item>AG Bandar Puteri</item>
         <item>AG Putra Heights</item>
+        <item>ML KL Sentral</item>
+        <item>ML Tun Sambanthan</item>
+        <item>ML Maharajalela</item>
+        <item>ML Hang Tuah</item>
+        <item>ML Imbi</item>
+        <item>ML Bukit Bintang</item>
+        <item>ML Raja Chulan</item>
+        <item>ML Bukit Nenas</item>
+        <item>ML Medan Tuanku</item>
+        <item>ML Chow Kit</item>
+        <item>ML Titiwangsa</item>
+        <item>MR Sungai Buloh</item>
+        <item>MR Kampung Selamat</item>
+        <item>MR Kwasa Damansara</item>
+        <item>MR Kwasa Sentral</item>
+        <item>MR Kota Damansara</item>
+        <item>MR Surian</item>
+        <item>MR Mutiara Damansara</item>
+        <item>MR Bandar Utama</item>
+        <item>MR Taman Tun Dr Ismail</item>
+        <item>MR Phileo Damansara</item>
+        <item>MR Pusat Bandar Damansara</item>
+        <item>KTM Batu caves</item>
+        <item>KTM Taman Wahyu</item>
+        <item>KTM Kampung Batu</item>
+        <item>KTM Batu Kentonmen</item>
+        <item>KTM Sentul</item>
+        <item>KTM Putra</item>
+        <item>KTM Bank Negara</item>
+        <item>KTM Kuala Lumpur</item>
+        <item>KTM KL Sentral</item>
+        <item>KTM Angkasapuri</item>
+        <item>KTM Pantai Dalam</item>
+        <item>KTM Petaling</item>
+        <item>KTM Jalan Templer</item>
+        <item>KTM Kg Dato Harun</item>
+        <item>KTM Seri Setia</item>
+        <item>KTM Setia Jaya</item>
+        <item>KTM Subang Jaya</item>
+        <item>KTM Batu Tiga</item>
+        <item>KTM Shah Alam</item>
+        <item>KTM Padang Jawa</item>
+        <item>KTM Bukit Badak</item>
+        <item>KTM Klang</item>
+        <item>KTM Teluk Pulai</item>
+        <item>KTM Teluk Gadong</item>
+        <item>KTM Kg Raja Uda</item>
+        <item>KTM Jalan Kastam</item>
+        <item>KTM Pelabuhan Klang</item>
+        <item>KTM Tg Malim</item>
+        <item>KTM Kuala Kubu Bharu</item>
+        <item>KTM Rasa</item>
+        <item>KTM Batang Kali</item>
+        <item>KTM Serendah</item>
+        <item>KTM Rawang</item>
+        <item>KTM Kuang</item>
+        <item>KTM Sungai Buloh</item>
+        <item>KTM Kepong Sentral</item>
+        <item>KTM Kepong</item>
+        <item>KTM Segambut</item>
+        <item>KTM Putra</item>
+        <item>KTM Bank Negara</item>
+        <item>KTM Kuala Lumpur</item>
+        <item>KTM KL Sentral</item>
+        <item>KTM Mid Valley</item>
+        <item>KTM Seputeh</item>
+        <item>KTM Salak Selatan</item>
+        <item>KTM Bandar Tasek Selatan</item>
+        <item>KTM Serdang</item>
+        <item>KTM Kajang</item>
+        <item>KTM UKM</item>
+        <item>KTM Bangi</item>
+        <item>KTM Batang Benar</item>
+        <item>KTM Nilai</item>
+        <item>KTM Labu</item>
+        <item>KTM Tiroi</item>
+        <item>KTM Seremban</item>
+        <item>KTM Senawang</item>
+        <item>KTM Sg Gadut</item>
+        <!--<item>MR Muzium Negara</item>-->
+        <!--<item>MR Pasar Seni</item>-->
+        <!--<item>MR Merdeka</item>-->
+        <!--<item>MR Bukit Bintang</item>-->
+        <!--<item>MR Tun Razak Exchange</item>-->
+        <!--<item>MR Cohcrane</item>-->
+        <!--<item>MR Maluri SBK</item>-->
+        <!--<item>MR Taman Pertama</item>-->
+        <!--<item>MR Taman Midah</item>-->
+        <!--<item>MR Taman Mutiara</item>-->
+        <!--<item>MR Taman Connaught</item>-->
+        <!--<item>MR Taman Suntex</item>-->
+        <!--<item>MR Sri Raya</item>-->
+        <!--<item>MR Bandar Tun Hussein Onn</item>-->
+        <!--<item>MR Batu Sebelas Cheras (SBK30) </item>-->
+        <!--<item>MR Bukit Dukung</item>-->
+        <!--<item>MR Sungai Jernih</item>-->
+        <!--<item>MR Stadium Kajang</item>-->
+        <!--<item>MR Kajang</item>-->
+    </string-array>
+
+    <string-array name="lrt_latlng">
+        <item>3.230898, 101.724067</item>
+
+        <item>3.219322, 101.721651</item>
+
+        <item>3.205573, 101.731637</item>
+
+        <item>3.198823, 101.737533</item>
+
+        <item>3.175577, 101.735752</item>
+
+        <item>3.167282, 101.735478</item>
+
+        <item>3.165245, 101.732082</item>
+
+        <item>3.164965, 101.724408</item>
+
+        <item>3.161214, 101.719237</item>
+
+        <item>3.157051, 101.712426</item>
+
+        <item>3.161258, 101.706648</item>
+
+        <item>3.156526, 101.703007</item>
+
+        <item>3.149713, 101.696522</item>
+
+        <item>3.142411, 101.695524</item>
+
+        <item>3.133992, 101.686471</item>
+
+        <item>3.127682, 101.678954</item>
+
+        <item>3.118757, 101.672202</item>
+
+        <item>3.115233, 101.667385</item>
+
+        <item>3.115627, 101.662553</item>
+
+        <item>3.103684, 101.645219</item>
+
+        <item>3.103950, 101.638286</item>
+
+        <item>3.104510, 101.622964</item>
+
+        <item>3.110951, 101.612032</item>
+
+        <item>3.113212, 101.604285</item>
+
+        <item>3.112795, 101.590753</item>
+
+        <item>3.108972, 101.584807</item>
+
+        <item>3.096600, 101.591822</item>
+
+        <item>3.083339, 101.587207</item>
+
+        <item>3.075759, 101.586480</item>
+
+        <item>3.067162, 101.586254</item>
+
+        <item>3.054661, 101.591787</item>
+
+        <item>3.046944, 101.588604</item>
+
+        <item>3.035015, 101.588511</item>
+
+        <item>3.028991, 101.581919</item>
+
+        <item>3.024711, 101.571738</item>
+
+        <item>3.009589, 101.571370</item>
+
+        <item>2.995970, 101.574082</item>
+
+        <item>3.150506, 101.760760</item>
+
+        <item>3.140165, 101.756784</item>
+
+        <item>3.137967, 101.753459</item>
+
+        <item>3.134825, 101.746360</item>
+
+        <item>3.129976, 101.739273</item>
+
+        <item>3.123699, 101.727920</item>
+
+        <item>3.121516, 101.719202</item>
+
+        <item>3.127703, 101.715340</item>
+
+        <item>3.134142, 101.712907</item>
+
+        <item>3.139379, 101.706314</item>
+
+        <item>3.145214, 101.701685</item>
+
+        <item>3.149713, 101.696522</item>
+
+        <item>3.155488, 101.695274</item>
+
+        <item>3.161385, 101.694919</item>
+
+        <item>3.166550, 101.693131</item>
+
+        <item>3.172796, 101.695654</item>
+
+        <item>3.179071, 101.694918</item>
+
+        <item>3.185681, 101.694722</item>
+
+        <item>3.112240, 101.714960</item>
+
+        <item>3.102102, 101.705892</item>
+
+        <item>3.090617, 101.713049</item>
+
+        <item>3.076791, 101.713655</item>
+
+        <item>3.062608, 101.708514</item>
+
+        <item>3.058401, 101.692365</item>
+
+        <item>3.060647, 101.686489</item>
+
+        <item>3.061396, 101.669395</item>
+
+        <item>3.061605, 101.662440</item>
+
+        <item>3.055325, 101.656630</item>
+
+        <item>3.051067, 101.643888</item>
+
+        <item>3.047314, 101.621825</item>
+
+        <item>3.033344, 101.616761</item>
+
+        <item>3.022573, 101.614324</item>
+
+        <item>3.017028, 101.613645</item>
+
+        <item>2.996022, 101.574272</item>
+
+        <item>3.133992, 101.686471</item>
+
+        <item>3.131619, 101.690425</item>
+
+        <item>3.138648, 101.699044</item>
+
+        <item>3.140205, 101.705974</item>
+
+        <item>3.142958, 101.709018</item>
+
+        <item>3.145865, 101.711312</item>
+
+        <item>3.150821, 101.710185</item>
+
+        <item>3.155899, 101.705301</item>
+
+        <item>3.159987, 101.698209</item>
+
+        <item>3.167128, 101.697970</item>
+
+        <item>3.172740, 101.696483</item>
+
+        <item>3.204755, 101.580553</item>
+
+        <item>3.197008, 101.577404</item>
+
+        <item>3.175849, 101.573463</item>
+
+        <item>3.169183, 101.565456</item>
+
+        <item>3.150162, 101.577760</item>
+
+        <item>3.150055, 101.593701</item>
+
+        <item>3.156507, 101.609608</item>
+
+        <item>3.147049, 101.617776</item>
+
+        <item>3.154057, 101.623362</item>
+
+        <item>3.127969, 101.642524</item>
+
+        <item>3.145779, 101.662133</item>
+
+        <item>3.237450, 101.682279</item>
+
+        <item>3.215131, 101.672573</item>
+
+        <item>3.203272, 101.675250</item>
+
+        <item>3.197207, 101.680187</item>
+
+        <item>3.184125, 101.688540</item>
+
+        <item>3.167548, 101.691447a</item>
+
+        <item>3.156100, 101.694713</item>
+
+        <item>3.203727, 101.674223</item>
+
+        <item>3.133992, 101.686471</item>
+
+        <item>3.112959, 101.672507</item>
+        <item>3.096101, 101.670285</item>
+
+        <item>3.086228, 101.663654</item>
+
+        <item>3.083055, 101.654533</item>
+
+        <item>3.085494, 101.631010</item>
+
+        <item>3.084997, 101.624932</item>
+
+        <item>3.082734, 101.610939</item>
+
+        <item>3.083567, 101.588813</item>
+
+        <item>3.076638, 101.559652</item>
+
+        <item>3.076803, 101.559138</item>
+
+        <item>3.051912, 101.492017</item>
+
+        <item>3.035480, 101.470610</item>
+
+        <item>3.042648, 101.449617</item>
+
+        <item>3.039668, 101.431699</item>
+
+        <item>3.037343, 101.432482</item>
+
+        <item>3.020053, 101.410251</item>
+
+        <item>3.009120, 101.403840</item>
+
+        <item>2.999593, 101.391624</item>
+
+        <item>3.684538, 101.518658</item>
+
+        <item>3.553515, 101.640162</item>
+
+        <item>3.500453, 101.634419</item>
+
+        <item>3.468560, 101.638427</item>
+
+        <item>3.375631, 101.614822</item>
+
+        <item>3.319333, 101.575199</item>
+
+        <item>3.258084, 101.554570</item>
+
+        <item>3.206621, 101.579549</item>
+
+        <item>3.208469, 101.628056</item>
+
+        <item>3.209053, 101.627953</item>
+
+        <item>3.186148, 101.663814</item>
+
+        <item>3.165290, 101.690795</item>
+
+        <item>3.154576, 101.693217</item>
+
+        <item>3.139920, 101.693435</item>
+
+        <item>3.133992, 101.686471</item>
+
+        <item>3.116926, 101.679123</item>
+
+        <item>3.113210, 101.680988</item>
+
+        <item>3.097287, 101.705544</item>
+
+        <item>3.076204, 101.711260</item>
+
+        <item>3.023103, 101.715615</item>
+
+        <item>2.984953, 101.788264</item>
+
+        <item>2.939880, 101.787446</item>
+
+        <item>2.903248, 101.786334</item>
+
+        <item>2.830213, 101.826916</item>
+
+        <item>2.802734, 101.799768</item>
+
+        <item>2.802729, 101.799727</item>
+
+        <item>2.740812, 101.872033</item>
+
+        <item>2.719414, 101.940422</item>
+
+        <item>2.690066, 101.972139</item>
+
+        <item>2.660765, 101.996937</item>
     </string-array>
 </resources>

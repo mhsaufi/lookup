@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.user.myrapid">
+    package="com.example.user.lookup">
 
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/rapidkl"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/rapidkl"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!--<meta-data-->
+            <!--android:name="com.google.android.geo.API_KEY"-->
+            <!--android:value="AIzaSyAV9ZImAGmFwKd2gasny60hgz7SCmgpdyo " />-->
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBtEZ-GyhbjODwxQpNSRs6Ie41sIThb3XU" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -40,7 +52,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".FareActivity" />
-        <activity android:name=".RouteActivity"></activity>
+        <activity android:name=".RouteActivity" />
+        <activity android:name=".TestActivity" />
+        <activity android:name=".InteractionActivity" />
+        <activity android:name=".LookAroundActivity" />
+        <activity android:name=".ViewPlaceActivity"></activity>
     </application>
 
 </manifest>

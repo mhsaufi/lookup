@@ -1,4 +1,4 @@
-package com.example.user.myrapid;
+package com.example.user.lookup;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,7 +17,7 @@ public class RouteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_route);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("RapidKL Transit");
+        getSupportActionBar().setTitle("Public Transit");
 
         route_img = (SubsamplingScaleImageView) findViewById(R.id.route_map);
 

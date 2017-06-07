@@ -8,7 +8,7 @@
     android:paddingRight="5dp"
     android:paddingTop="10dp"
     android:orientation="vertical"
-    tools:context="com.example.user.myrapid.FareActivity">
+    tools:context="com.example.user.lookup.FareActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:fontFamily="sans-serif-smallcaps"
             android:text="LRT Fare Table"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -37,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/curvy_button"
             android:text="CASH/TOKEN"
             android:textColor="@android:color/white" />
 
@@ -47,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/curvy_button"
             android:text="TOUCH N GO"
             android:textColor="@android:color/white" />
 
@@ -65,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/curvy_button"
             android:text="WEEKLY"
             android:textColor="@android:color/white" />
 
@@ -75,7 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/curvy_button"
             android:text="MONTHLY"
             android:textColor="@android:color/white" />
 
@@ -90,7 +92,9 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-smallcaps"
             android:text="MRT Fare Table"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -109,7 +113,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/curvy_button"
             android:text="CASH/TOKEN"
             android:textColor="@android:color/white" />
 
@@ -119,7 +123,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/curvy_button"
             android:text="TOUCH N GO"
             android:textColor="@android:color/white" />
 

@@ -1,8 +1,6 @@
-package com.example.user.myrapid;
+package com.example.user.lookup;
 
 import android.content.Intent;
-import android.media.MediaCodec;
-import android.os.PatternMatcher;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -30,7 +28,7 @@ public class SearchActivity extends AppCompatActivity{
         setContentView(R.layout.activity_search);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("RapidKL Trip Planner");
+        getSupportActionBar().setTitle("Plan Journey");
 
         String[] station = getResources().getStringArray(R.array.lrt_stop);
 
@@ -38,7 +36,7 @@ public class SearchActivity extends AppCompatActivity{
         to = (AutoCompleteTextView) findViewById(R.id.to);
         background_image = (ImageView) findViewById(R.id.bg);
 
-        Picasso.with(this).load(R.drawable.bg).into(background_image);
+        Picasso.with(this).load(R.drawable.pexel).into(background_image);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>
                 (this,android.R.layout.simple_list_item_1,station);
@@ -59,31 +57,60 @@ public class SearchActivity extends AppCompatActivity{
                 String from_location = from.getText().toString();
                 String to_location = to.getText().toString();
 
+                String [] arr = from_location.split(" ", 2);
+                String [] arr1 = to_location.split(" ", 2);
+
+                String co_1 = arr[1];
+                String co_2 = arr1[1];
+
                 String pattern1 = ".*KJ .*";
                 String pattern2 = ".*AG .*";
+                String pattern3 = ".*ML .*";
+                String pattern4 = ".*MR .*";
+                String pattern5 = ".*KTM .*";
 
                 boolean isMatch1 = Pattern.matches(pattern1, from_location);
                 boolean isMatch2 = Pattern.matches(pattern2,from_location);
+                boolean isMatch5 = Pattern.matches(pattern3, from_location);
                 boolean isMatch3 = Pattern.matches(pattern1, to_location);
                 boolean isMatch4 = Pattern.matches(pattern2, to_location);
+                boolean isMatch6 = Pattern.matches(pattern3, to_location);
+                boolean isMatch7 = Pattern.matches(pattern4, from_location);
+                boolean isMatch8 = Pattern.matches(pattern4, to_location);
+                boolean isMatch9 = Pattern.matches(pattern5, from_location);
+                boolean isMatch10 = Pattern.matches(pattern5, to_location);
 
                 intent = new Intent(SearchActivity.this, ResultActivity.class);
 
                 intent.putExtra("FROM",from_location);
                 intent.putExtra("TO",to_location);
 
-                if(isMatch1 == true || isMatch2 == true){
+                if(isMatch1 == true || isMatch2 == true || isMatch5 == true || isMatch7 == true || isMatch9 == true){
 
-                    if(isMatch3 == true || isMatch4 == true){
-                        if(from_location.equals(to_location)){
+                    if(isMatch3 == true || isMatch4 == true || isMatch6 == true || isMatch8 == true || isMatch10 == true){
 
-                            Toast.makeText(SearchActivity.this, "Cannot go to the same place", Toast.LENGTH_SHORT).show();
+                            if(from_location.equals(to_location)){
 
-                        }else{
+                                Toast.makeText(SearchActivity.this, "Cannot go to the same place", Toast.LENGTH_SHORT).show();
 
-                            startActivity(intent);
+                            }else{
 
-                        }
+                                if(co_1.equals("MR") && co_2.equals("MR")){
+
+                                    startActivity(intent);
+
+                                }else if(co_1.equals("MR") || co_2.equals("MR")){
+
+                                    Toast.makeText(SearchActivity.this, "No route directly connect to MRT", Toast.LENGTH_SHORT).show();
+
+                                }else if(!co_1.equals("MR") && !co_2.equals("MR")){
+
+                                    startActivity(intent);
+
+                                }
+
+                            }
+
                     }else{
 
                         Toast.makeText(SearchActivity.this, "Cannot look for your destination LRT Station", Toast.LENGTH_SHORT).show();
@@ -93,6 +120,7 @@ public class SearchActivity extends AppCompatActivity{
                 }else{
 
                     Toast.makeText(SearchActivity.this, "Cannot look for your LRT Station", Toast.LENGTH_SHORT).show();
+
                 }
 
             }

@@ -1,4 +1,4 @@
-package com.example.user.myrapid.Builder;
+package com.example.user.lookup.Builder;
 
 import android.content.Context;
 import android.util.Log;
@@ -34,8 +34,6 @@ public class FareBuilder {
     public void fareGrab(final Callback call){
 
         String url = "https://maps.googleapis.com/maps/api/directions/json?";
-        final String transit_mode = "train";
-        final String mode = "transit";
 
         final String key = "AIzaSyDguAtCDPNZRSsoIdRVLzVyQ7zSt1sdfdk ";
 
@@ -43,9 +41,7 @@ public class FareBuilder {
                 + from_station
                 + "&destination="
                 + to_station
-                + "&mode="
-                + mode
-                + "&key="
+                + "&mode=transit&key="
                 + key;
 
         //String encoded_url = URLEncoder.encode(real_url, "UTF-8");

@@ -1,4 +1,4 @@
-package com.example.user.myrapid.Builder;
+package com.example.user.lookup.Builder;
 
 /**
  * Created by USER on 29/5/2017.

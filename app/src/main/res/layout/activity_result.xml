@@ -7,7 +7,7 @@
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
     android:orientation="vertical"
-    tools:context="com.example.user.myrapid.ResultActivity">
+    tools:context="com.example.user.lookup.ResultActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

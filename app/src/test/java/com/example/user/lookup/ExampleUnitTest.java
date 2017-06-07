@@ -1,4 +1,4 @@
-package com.example.user.myrapid;
+package com.example.user.lookup;
 
 import org.junit.Test;
 

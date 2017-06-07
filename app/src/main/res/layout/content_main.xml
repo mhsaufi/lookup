@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
+    android:gravity="top|center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="100dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.user.myrapid.MainActivity"
+    tools:context="com.example.user.lookup.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
 
-    <WebView
-        android:id="@+id/webview"
+    <AutoCompleteTextView
+        android:id="@+id/autocomplete"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="40dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/curvy_edit_text"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintVertical_bias="0.435" />
+
+    <Button
+        android:id="@+id/lookuphere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/curvy_button"
+        android:text="Look Up Here"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
 
 
 </LinearLayout>

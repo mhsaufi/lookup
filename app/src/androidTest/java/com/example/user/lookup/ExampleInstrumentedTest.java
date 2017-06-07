@@ -1,4 +1,4 @@
-package com.example.user.myrapid;
+package com.example.user.lookup;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

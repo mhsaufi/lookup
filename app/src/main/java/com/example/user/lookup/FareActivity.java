@@ -1,4 +1,4 @@
-package com.example.user.myrapid;
+package com.example.user.lookup;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -20,7 +20,7 @@ public class FareActivity extends AppCompatActivity implements Button.OnClickLis
         setContentView(R.layout.activity_fare);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("RapidKL Fares");
+        getSupportActionBar().setTitle("Public Transit Fares");
 
         btn1 = (Button) findViewById(R.id.lrt_cash);
         btn2 = (Button) findViewById(R.id.lrt_tg);
