@@ -3,6 +3,11 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="apps_full_name">LookUp Version 1.11</string>
+    <string name="apps_description">
+        LookUp! is a registered trademark of this travelling apps build for your ease of your journey.
+        Developed by Muhammad Habib in 2017. Collaboration with Foursquare as a resource for venues endpoint.
+        As simple as it is, customers ease of use is our priority. Aim to become travellers bestfriend.
+    </string>
 
-    <string name="action_settings">Settings</string>
 </resources>

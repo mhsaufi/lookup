@@ -42,9 +42,11 @@ public class StationListAdapter  extends ArrayAdapter<StationList> {
 
         StationList stationList = getItem(position);
 
+        int index_number = stationList.index_number;
+
         String[] latlng_bank = getContext().getResources().getStringArray(R.array.lrt_latlng);
 
-        String latlng = latlng_bank[position];
+        String latlng = latlng_bank[index_number];
 
         final String main_point = latlng.replaceAll(" ", "");
 

@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context="com.example.user.lookup.LookAroundActivity">
 
+    <ImageView
+        android:id="@+id/location_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <ListView
         android:id="@+id/place_list"
         android:layout_width="match_parent"

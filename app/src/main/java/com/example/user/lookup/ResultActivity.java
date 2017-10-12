@@ -148,640 +148,658 @@ public class ResultActivity extends AppCompatActivity {
 
         if(indice.equals("KJKJ")){
 
-                //same track
-                if(start_index > end_index){
-                    for(int j = start_index; j >= end_index; j--){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
-                }else{
-                    for(int j = start_index; j <= end_index; j++){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
+            //same track
+            if(start_index > end_index){
+                for(int j = start_index; j >= end_index; j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
                 }
+            }else{
+                for(int j = start_index; j <= end_index; j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+            }
 
-                from_val = "Stesen%25LRT%25" + from_val.replaceAll(" ", "%25");
-                to_val = "Stesen%25LRT%25" + to_val.replaceAll(" ", "%25");
+            from_val = "Stesen%25LRT%25" + from_val.replaceAll(" ", "%25");
+            to_val = "Stesen%25LRT%25" + to_val.replaceAll(" ", "%25");
 
-                fareBuilder = new FareBuilder(from_val, to_val, this);
+            fareBuilder = new FareBuilder(from_val, to_val, this);
 
         }else if(indice.equals("AGAG")){
 
-                if(start_index > end_index){
-                    for(int j = start_index; j >= end_index; j--){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
-                }else{
-                    for(int j = start_index; j <= end_index; j++){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
+            if(start_index > end_index){
+                for(int j = start_index; j >= end_index; j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
                 }
+            }else{
+                for(int j = start_index; j <= end_index; j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+            }
 
-                from_val = "Stesen%25LRT%25" + from_val.replaceAll(" ", "%25");
-                to_val = "Stesen%25LRT%25" + to_val.replaceAll(" ", "%25");
+            from_val = "Stesen%25LRT%25" + from_val.replaceAll(" ", "%25");
+            to_val = "Stesen%25LRT%25" + to_val.replaceAll(" ", "%25");
 
-                fareBuilder = new FareBuilder(from_val, to_val, this);
+            fareBuilder = new FareBuilder(from_val, to_val, this);
 
         }else if(indice.equals("MLML")){
 
-                if(start_index > end_index){
-                    for(int j = start_index; j >= end_index; j--){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
-                }else{
-                    for(int j = start_index; j <= end_index; j++){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
+            if(start_index > end_index){
+                for(int j = start_index; j >= end_index; j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
                 }
+            }else{
+                for(int j = start_index; j <= end_index; j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+            }
 
-                from_val = "Monorail%25Station%25" + from_val.replaceAll(" ", "%25");
-                to_val = "Monorail%25Station%25" + to_val.replaceAll(" ", "%25");
+            from_val = "Monorail%25Station%25" + from_val.replaceAll(" ", "%25");
+            to_val = "Monorail%25Station%25" + to_val.replaceAll(" ", "%25");
 
-                fareBuilder = new FareBuilder(from_val, to_val, this);
+            fareBuilder = new FareBuilder(from_val, to_val, this);
 
 
         }else if(indice.equals("KJAG")){
 
-                message_text.setText("Stop at Masjid Jamek and take Ampang Line to continue your journey");
+            message_text.setText("Stop at Masjid Jamek and take Ampang Line to continue your journey");
+
+            if(start_index > kj_interchange){
+
+                for(int j = start_index; j >= kj_interchange; j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+
+            }else{
+
                 for(int j = start_index; j <= kj_interchange; j++){
-                    stationlists.add(new StationList(station_name_list[j]));
-                }
-                if(end_index > ag_interchange){
-                    for(int h = ag_interchange; h <= end_index; h++){
-                        stationlists.add(new StationList(station_name_list[h]));
-                    }
-                }else{
-                    for(int h = ag_interchange; h >= end_index; h--){
-                        stationlists.add(new StationList(station_name_list[h]));
-                    }
+                    stationlists.add(new StationList(station_name_list[j],j));
                 }
 
-                from_val = "Stesen%25LRT%25" + from_val.replaceAll(" ", "%25");
-                to_val = "Stesen%25LRT%25" + to_val.replaceAll(" ", "%25");
+            }
 
-                fareBuilder = new FareBuilder(from_val, to_val, this);
+            if(end_index > ag_interchange){
+                for(int h = ag_interchange; h <= end_index; h++){
+                    stationlists.add(new StationList(station_name_list[h],h));
+                }
+            }else{
+                for(int h = ag_interchange; h >= end_index; h--){
+                    stationlists.add(new StationList(station_name_list[h],h));
+                }
+            }
+
+            from_val = "Stesen%25LRT%25" + from_val.replaceAll(" ", "%25");
+            to_val = "Stesen%25LRT%25" + to_val.replaceAll(" ", "%25");
+
+            fareBuilder = new FareBuilder(from_val, to_val, this);
 
 
         }else if(indice.equals("AGKJ")){
 
-                message_text.setText("Stop at Masjid Jamek and take Kelana jaya Line to continue your journey");
+            message_text.setText("Stop at Masjid Jamek and take Kelana jaya Line to continue your journey");
 
-                if(start_index < ag_interchange){
-                    Toast.makeText(this, "KURRRR", Toast.LENGTH_SHORT).show();
-                    for(int j = start_index; j <= ag_interchange; j++){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
-                    if(end_index > kj_interchange){
-                        for(int h = kj_interchange; h <= end_index; h++){
-                            stationlists.add(new StationList(station_name_list[h]));
-                        }
-                    }else{
-                        for(int h = kj_interchange; h >= end_index; h--){
-                            stationlists.add(new StationList(station_name_list[h]));
-                        }
-                    }
+            if(start_index < ag_interchange){
 
+                for(int j = start_index; j <= ag_interchange; j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+                if(end_index > kj_interchange){
+                    for(int h = kj_interchange; h <= end_index; h++){
+                        stationlists.add(new StationList(station_name_list[h],h));
+                    }
                 }else{
-
-                    for(int j = start_index; j >= ag_interchange; j--){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
-                    if(end_index > kj_interchange){
-                        for(int h = kj_interchange; h <= end_index; h++){
-                            stationlists.add(new StationList(station_name_list[h]));
-                        }
-                    }else{
-                        for(int h = kj_interchange; h >= end_index; h--){
-                            stationlists.add(new StationList(station_name_list[h]));
-                        }
+                    for(int h = kj_interchange; h >= end_index; h--){
+                        stationlists.add(new StationList(station_name_list[h],h));
                     }
                 }
 
-                from_val = "Stesen%25LRT%25" + from_val.replaceAll(" ", "%25");
-                to_val = "Stesen%25LRT%25" + to_val.replaceAll(" ", "%25");
+            }else{
 
-                fareBuilder = new FareBuilder(from_val, to_val, this);
+                for(int j = start_index; j >= ag_interchange; j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+                if(end_index > kj_interchange){
+                    for(int h = kj_interchange; h <= end_index; h++){
+                        stationlists.add(new StationList(station_name_list[h],h));
+                    }
+                }else{
+                    for(int h = kj_interchange; h >= end_index; h--){
+                        stationlists.add(new StationList(station_name_list[h],h));
+                    }
+                }
+            }
+
+            from_val = "Stesen%25LRT%25" + from_val.replaceAll(" ", "%25");
+            to_val = "Stesen%25LRT%25" + to_val.replaceAll(" ", "%25");
+
+            fareBuilder = new FareBuilder(from_val, to_val, this);
 
         }else if(indice.equals("MLKJ")){
 
             message_text.setText("Stop at KL Sentral and take LRT Kelana jaya Line to continue your journey");
 
-                if (start_index > ml_interchange) {
+            if (start_index > ml_interchange) {
 
-                    for (int j = start_index; j >= ml_interchange; j--) {
-                        //from start node to interchange point
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
-                }else{
+                for (int j = start_index; j >= ml_interchange; j--) {
+                    //from start node to interchange point
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+            }else{
 
-                    for(int j = start_index; j >= ml_interchange_2; j--){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
-
+                for(int j = start_index; j >= ml_interchange_2; j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
                 }
 
-                if(end_index > kj_interchange_2){
+            }
 
-                    for(int h = kj_interchange_2;h <= end_index;h++){
-                        stationlists.add(new StationList(station_name_list[h]));
-                    }
+            if(end_index > kj_interchange_2){
 
-                }else{
-
-                    for(int h = kj_interchange_3;h >= end_index;h--){
-                        stationlists.add(new StationList(station_name_list[h]));
-                    }
-
+                for(int h = kj_interchange_2;h <= end_index;h++){
+                    stationlists.add(new StationList(station_name_list[h],h));
                 }
 
-                from_val = "Monorail%25Station%25" + from_val.replaceAll(" ", "%25");
-                to_val = "Stesen%25LRT%25" + to_val.replaceAll(" ", "%25");
+            }else{
 
-                fareBuilder = new FareBuilder(from_val, to_val, this);
+                for(int h = kj_interchange_3;h >= end_index;h--){
+                    stationlists.add(new StationList(station_name_list[h],h));
+                }
+
+            }
+
+            from_val = "Monorail%25Station%25" + from_val.replaceAll(" ", "%25");
+            to_val = "Stesen%25LRT%25" + to_val.replaceAll(" ", "%25");
+
+            fareBuilder = new FareBuilder(from_val, to_val, this);
 
         }else if(indice.equals("KJML")){
 
-                message_text.setText("Stop at Dang Wangi and take Bukit Nenas Monorail to continue your journey");
+            message_text.setText("Stop at Dang Wangi and take Bukit Nenas Monorail to continue your journey");
 
-                if(start_index < kj_interchange_2){
+            if(start_index < kj_interchange_2){
 
-                    for(int j = start_index;j <= kj_interchange_2;j++){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
-
-                }else{
-
-                    for(int j = start_index;j >= kj_interchange_2;j--){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
+                for(int j = start_index;j <= kj_interchange_2;j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
                 }
 
-                if(end_index > ml_interchange){
+            }else{
 
-                    for(int h = ml_interchange;h <= end_index;h++){
-                        stationlists.add(new StationList(station_name_list[h]));
-                    }
+                for(int j = start_index;j >= kj_interchange_2;j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+            }
 
-                }else{
+            if(end_index > ml_interchange){
 
-                    for(int h = ml_interchange;h >= end_index;h--){
-                        stationlists.add(new StationList(station_name_list[h]));
-                    }
-
+                for(int h = ml_interchange;h <= end_index;h++){
+                    stationlists.add(new StationList(station_name_list[h],h));
                 }
 
-                from_val = "Stesen%25LRT%25" + from_val.replaceAll(" ", "%25");
-                to_val = "Monorail%25Station%25" + to_val.replaceAll(" ", "%25");
+            }else{
 
-                fareBuilder = new FareBuilder(from_val, to_val, this);
+                for(int h = ml_interchange;h >= end_index;h--){
+                    stationlists.add(new StationList(station_name_list[h],h));
+                }
+
+            }
+
+            from_val = "Stesen%25LRT%25" + from_val.replaceAll(" ", "%25");
+            to_val = "Monorail%25Station%25" + to_val.replaceAll(" ", "%25");
+
+            fareBuilder = new FareBuilder(from_val, to_val, this);
 
         }else if(indice.equals("AGML")){
 
-                if(start_index < ag_interchange){
-                    for(int k = start_index;k <= ag_interchange;k++){
-                        stationlists.add(new StationList(station_name_list[k]));
-                    }
-                }else{
-
-                    for(int k = start_index;k >= ag_interchange;k--){
-                        stationlists.add(new StationList(station_name_list[k]));
-                    }
+            if(start_index < ag_interchange){
+                for(int k = start_index;k <= ag_interchange;k++){
+                    stationlists.add(new StationList(station_name_list[k],k));
                 }
+            }else{
 
-                for(int h = kj_interchange;h <= kj_interchange_3;h++){
-                    stationlists.add(new StationList(station_name_list[h]));
+                for(int k = start_index;k >= ag_interchange;k--){
+                    stationlists.add(new StationList(station_name_list[k],k));
                 }
+            }
 
-                for(int i = ml_interchange_2;i <= end_index;i++){
-                    stationlists.add(new StationList(station_name_list[i]));
-                }
+            for(int h = kj_interchange;h <= kj_interchange_3;h++){
+                stationlists.add(new StationList(station_name_list[h],h));
+            }
 
-                from_val = "Stesen%25LRT%25" + from_val.replaceAll(" ", "%25");
-                to_val = "Monorail%25Station%25" + to_val.replaceAll(" ", "%25");
+            for(int i = ml_interchange_2;i <= end_index;i++){
+                stationlists.add(new StationList(station_name_list[i],i));
+            }
 
-                fareBuilder = new FareBuilder(from_val, to_val, this);
+            from_val = "Stesen%25LRT%25" + from_val.replaceAll(" ", "%25");
+            to_val = "Monorail%25Station%25" + to_val.replaceAll(" ", "%25");
+
+            fareBuilder = new FareBuilder(from_val, to_val, this);
 
         }else if(indice.equals("MLAG")){
 
-                for(int j = start_index;j >= ml_interchange_2;j--){
+            for(int j = start_index;j >= ml_interchange_2;j--){
 
-                    stationlists.add(new StationList(station_name_list[j]));
+                stationlists.add(new StationList(station_name_list[j],j));
+            }
+
+            for(int h = kj_interchange_3;h >= kj_interchange;h--){
+                stationlists.add(new StationList(station_name_list[h],h));
+            }
+
+            if(end_index < ag_interchange){
+                for(int k = ag_interchange;k >= end_index;k--){
+                    stationlists.add(new StationList(station_name_list[k],k));
                 }
+            }else{
 
-                for(int h = kj_interchange_3;h >= kj_interchange;h--){
-                    stationlists.add(new StationList(station_name_list[h]));
+                for(int k = ag_interchange;k <= end_index;k++){
+                    stationlists.add(new StationList(station_name_list[k],k));
                 }
+            }
 
-                if(end_index < ag_interchange){
-                    for(int k = ag_interchange;k >= end_index;k--){
-                        stationlists.add(new StationList(station_name_list[k]));
-                    }
-                }else{
+            to_val = "Stesen%25LRT%25" + to_val.replaceAll(" ", "%25");
+            from_val = "Monorail%25Station%25" + from_val.replaceAll(" ", "%25");
 
-                    for(int k = ag_interchange;k <= end_index;k++){
-                        stationlists.add(new StationList(station_name_list[k]));
-                    }
-                }
-
-                to_val = "Stesen%25LRT%25" + to_val.replaceAll(" ", "%25");
-                from_val = "Monorail%25Station%25" + from_val.replaceAll(" ", "%25");
-
-                fareBuilder = new FareBuilder(from_val, to_val, this);
+            fareBuilder = new FareBuilder(from_val, to_val, this);
 
         }else if(indice.equals("MR")){
+
+            if(start_index > end_index){
+
+                for(int j = start_index;j >= end_index;j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+
+            }else{
+
+                for(int j = start_index;j <= end_index;j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+
+            }
+
+            from_val = "MRT%25" + from_val.replaceAll(" ", "%25");
+            to_val = "MRT%25" + to_val.replaceAll(" ", "%25");
+
+            fareBuilder = new FareBuilder(from_val, to_val, this);
+
+        }else if(indice.equals("KTKT")){
+
+            if(ktm_track.equals(ktm_track_end)){
 
                 if(start_index > end_index){
 
                     for(int j = start_index;j >= end_index;j--){
-                        stationlists.add(new StationList(station_name_list[j]));
+                        stationlists.add(new StationList(station_name_list[j],j));
                     }
 
                 }else{
 
                     for(int j = start_index;j <= end_index;j++){
-                        stationlists.add(new StationList(station_name_list[j]));
+                        stationlists.add(new StationList(station_name_list[j],j));
                     }
-
                 }
 
-                from_val = "MRT%25" + from_val.replaceAll(" ", "%25");
-                to_val = "MRT%25" + to_val.replaceAll(" ", "%25");
+            }else if(ktm_track.equals("A") && ktm_track_end.equals("B")){
 
-                fareBuilder = new FareBuilder(from_val, to_val, this);
-
-        }else if(indice.equals("KTKT")){
-
-                if(ktm_track.equals(ktm_track_end)){
-
-                        if(start_index > end_index){
-
-                            for(int j = start_index;j >= end_index;j--){
-                                stationlists.add(new StationList(station_name_list[j]));
-                            }
-
-                        }else{
-
-                            for(int j = start_index;j >= end_index;j++){
-                                stationlists.add(new StationList(station_name_list[j]));
-                            }
-                        }
-
-                }else if(ktm_track.equals("A") && ktm_track_end.equals("B")){
-
-                            for(int j = start_index;j >= end_index;j++){
-                                stationlists.add(new StationList(station_name_list[j]));
-                            }
-
-                }else if(ktm_track.equals("A") && ktm_track_end.equals("C")){
-
-                            //98 is Putra station
-                            for(int j = start_index; j <= 98; j++){
-                                stationlists.add(new StationList(station_name_list[j]));
-                            }
-
-                            for(int h = 131;h >= end_index;h--){
-                                stationlists.add(new StationList(station_name_list[h]));
-                            }
-
-                }else if(ktm_track.equals("A") && ktm_track_end.equals("D")){
-
-                            //101 is KL Sentral
-                            for(int j = start_index; j <= 101; j++){
-                                stationlists.add(new StationList(station_name_list[j]));
-                            }
-
-                            for(int h = 134;h <= end_index;h++){
-                                stationlists.add(new StationList(station_name_list[h]));
-                            }
-
-                }else if(ktm_track.equals("B") && ktm_track_end.equals("A")){
-
-                            for(int j = start_index;j >= end_index;j--){
-                                stationlists.add(new StationList(station_name_list[j]));
-                            }
-
-                }else if(ktm_track.equals("B") && ktm_track_end.equals("C")){
-
-                            //101 is KL Sentral
-                            for(int j = start_index;j >= 101; j--){
-                                stationlists.add(new StationList(station_name_list[j]));
-                            }
-
-                            for(int h = 134;h >= end_index;h--){
-                                stationlists.add(new StationList(station_name_list[h]));
-                            }
-
-                }else if(ktm_track.equals("B") && ktm_track_end.equals("D")){
-
-                            //101 is KL Sentral
-                            for(int j = start_index;j >= 101; j--){
-                                stationlists.add(new StationList(station_name_list[j]));
-                            }
-
-                            for(int h = 134;h <= end_index;h++){
-                                stationlists.add(new StationList(station_name_list[h]));
-                            }
-
-                }else if(ktm_track.equals("C") && ktm_track_end.equals("A")){
-
-                            //98 is Putra station
-                            for(int j = start_index; j <= 131; j++){
-                                stationlists.add(new StationList(station_name_list[j]));
-                            }
-
-                            for(int h = 98;h >= end_index;h--){
-                                stationlists.add(new StationList(station_name_list[h]));
-                            }
-
-                }else if(ktm_track.equals("C") && ktm_track_end.equals("B")){
-
-                            //101 is KL Sentral
-                            for(int j = start_index; j <= 134; j++){
-                                stationlists.add(new StationList(station_name_list[j]));
-                            }
-
-                            for(int h = 101;h <= end_index;h++){
-                                stationlists.add(new StationList(station_name_list[h]));
-                            }
-
-                }else if(ktm_track.equals("C") && ktm_track_end.equals("D")){
-
-                            for(int j = start_index;j >= end_index;j++){
-                                stationlists.add(new StationList(station_name_list[j]));
-                            }
-
-                }else if(ktm_track.equals("D") && ktm_track_end.equals("A")){
-
-                            //101 is KL Sentral
-                            for(int j = start_index;j >= 134; j--){
-                                stationlists.add(new StationList(station_name_list[j]));
-                            }
-
-                            for(int h = 101;h >= end_index;h--){
-                                stationlists.add(new StationList(station_name_list[h]));
-                            }
-
-                }else if(ktm_track.equals("D") && ktm_track_end.equals("B")){
-
-                            //101 is KL Sentral
-                            for(int j = start_index;j >= 134; j--){
-                                stationlists.add(new StationList(station_name_list[j]));
-                            }
-
-                            for(int h = 101;h <= end_index;h++){
-                                stationlists.add(new StationList(station_name_list[h]));
-                            }
-
-                }else if(ktm_track.equals("D") && ktm_track_end.equals("C")){
-
-                            for(int j = start_index;j >= end_index;j--){
-                                stationlists.add(new StationList(station_name_list[j]));
-                            }
-
+                for(int j = start_index;j <= end_index;j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
                 }
+
+            }else if(ktm_track.equals("A") && ktm_track_end.equals("C")){
+
+                //98 is Putra station
+                for(int j = start_index; j <= 98; j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+
+                for(int h = 131;h >= end_index;h--){
+                    stationlists.add(new StationList(station_name_list[h],h));
+                }
+
+            }else if(ktm_track.equals("A") && ktm_track_end.equals("D")){
+
+                //101 is KL Sentral
+                for(int j = start_index; j <= 101; j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+
+                for(int h = 134;h <= end_index;h++){
+                    stationlists.add(new StationList(station_name_list[h],h));
+                }
+
+            }else if(ktm_track.equals("B") && ktm_track_end.equals("A")){
+
+                for(int j = start_index;j >= end_index;j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+
+            }else if(ktm_track.equals("B") && ktm_track_end.equals("C")){
+
+                //101 is KL Sentral
+                for(int j = start_index;j >= 101; j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+
+                for(int h = 134;h >= end_index;h--){
+                    stationlists.add(new StationList(station_name_list[h],h));
+                }
+
+            }else if(ktm_track.equals("B") && ktm_track_end.equals("D")){
+
+                //101 is KL Sentral
+                for(int j = start_index;j >= 101; j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+
+                for(int h = 134;h <= end_index;h++){
+                    stationlists.add(new StationList(station_name_list[h],h));
+                }
+
+            }else if(ktm_track.equals("C") && ktm_track_end.equals("A")){
+
+                //98 is Putra station
+                for(int j = start_index; j <= 131; j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+
+                for(int h = 98;h >= end_index;h--){
+                    stationlists.add(new StationList(station_name_list[h],h));
+                }
+
+            }else if(ktm_track.equals("C") && ktm_track_end.equals("B")){
+
+                //101 is KL Sentral
+                for(int j = start_index; j <= 134; j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+
+                for(int h = 101;h <= end_index;h++){
+                    stationlists.add(new StationList(station_name_list[h],h));
+                }
+
+            }else if(ktm_track.equals("C") && ktm_track_end.equals("D")){
+
+                for(int j = start_index;j >= end_index;j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+
+            }else if(ktm_track.equals("D") && ktm_track_end.equals("A")){
+
+                //101 is KL Sentral
+                for(int j = start_index;j >= 134; j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+
+                for(int h = 101;h >= end_index;h--){
+                    stationlists.add(new StationList(station_name_list[h],h));
+                }
+
+            }else if(ktm_track.equals("D") && ktm_track_end.equals("B")){
+
+                //101 is KL Sentral
+                for(int j = start_index;j >= 134; j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+
+                for(int h = 101;h <= end_index;h++){
+                    stationlists.add(new StationList(station_name_list[h],h));
+                }
+
+            }else if(ktm_track.equals("D") && ktm_track_end.equals("C")){
+
+                for(int j = start_index;j >= end_index;j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+
+            }
+
+
+            from_val = "Stesen%25Komuter%25" + from_val.replaceAll(" ", "%25");
+            to_val = "Stesen%25Komuter%25" + to_val.replaceAll(" ", "%25");
+
+            fareBuilder = new FareBuilder(from_val, to_val, this);
 
         }else if(indice.equals("KTKJ")){
 
-                if(ktm_track.equals("A")){
+            if(ktm_track.equals("A")){
 
-                            message_text.setText("We couldn't calculate the fare for KTM. " +
-                                    "               Displayed cost is for LRT fares only");
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "               Displayed cost is for LRT fares only");
 
-                            for(int j = start_index;j <= 101;j++){
-                                stationlists.add(new StationList(station_name_list[j]));
-                            }
-
-                }else if(ktm_track.equals("B")){
-
-                            message_text.setText("We couldn't calculate the fare for KTM. " +
-                                    "               Displayed cost is for LRT fares only");
-
-                            for(int j = start_index;j >= 101;j--){
-                                stationlists.add(new StationList(station_name_list[j]));
-                            }
-
-                }else if(ktm_track.equals("C")){
-
-                            message_text.setText("We couldn't calculate the fare for KTM. " +
-                                    "               Displayed cost is for LRT fares only");
-
-                            for(int j = start_index;j <= 134;j++){
-                                stationlists.add(new StationList(station_name_list[j]));
-                            }
-
-                }else if(ktm_track.equals("D")){
-
-                            message_text.setText("We couldn't calculate the fare for KTM. " +
-                                    "               Displayed cost is for LRT fares only");
-
-                            for(int j = start_index;j >= 134;j--){
-                                stationlists.add(new StationList(station_name_list[j]));
-                            }
+                for(int j = start_index;j <= 101;j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
                 }
 
-                from_val = "KL Sentral";
+            }else if(ktm_track.equals("B")){
 
-                if(end_index > kj_interchange_3){
-                        for(int h = kj_interchange_3;h <= end_index;h++){
-                            stationlists.add(new StationList(station_name_list[h]));
-                        }
-                }else{
-                        for(int h = kj_interchange_3;h >= end_index;h--) {
-                            stationlists.add(new StationList(station_name_list[h]));
-                        }
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "               Displayed cost is for LRT fares only");
+
+                for(int j = start_index;j >= 101;j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
                 }
 
-                from_val = "LRT%25" + from_val.replaceAll(" ", "%25");
-                to_val = "LRT%25" + to_val.replaceAll(" ", "%25");
+            }else if(ktm_track.equals("C")){
 
-                fareBuilder = new FareBuilder(from_val, to_val, this);
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "               Displayed cost is for LRT fares only");
+
+                for(int j = start_index;j <= 134;j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+
+            }else if(ktm_track.equals("D")){
+
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "               Displayed cost is for LRT fares only");
+
+                for(int j = start_index;j >= 134;j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+            }
+
+            from_val = "KL Sentral";
+
+            if(end_index > kj_interchange_3){
+                for(int h = kj_interchange_3;h <= end_index;h++){
+                    stationlists.add(new StationList(station_name_list[h],h));
+                }
+            }else{
+                for(int h = kj_interchange_3;h >= end_index;h--) {
+                    stationlists.add(new StationList(station_name_list[h],h));
+                }
+            }
+
+            from_val = "LRT%25" + from_val.replaceAll(" ", "%25");
+            to_val = "LRT%25" + to_val.replaceAll(" ", "%25");
+
+            fareBuilder = new FareBuilder(from_val, to_val, this);
 
         }else if(indice.equals("KJKT")){
 
-                to_val = "KL Sentral";
+            to_val = "KL Sentral";
 
-                if(start_index > kj_interchange_3){
-                        for(int h = start_index;h > kj_interchange_3;h--){
-                            stationlists.add(new StationList(station_name_list[h]));
-                        }
-                }else {
-                        for (int h = start_index; h < kj_interchange_3;h++) {
-                            stationlists.add(new StationList(station_name_list[h]));
-                        }
+            if(start_index > kj_interchange_3){
+                for(int h = start_index;h > kj_interchange_3;h--){
+                    stationlists.add(new StationList(station_name_list[h],h));
+                }
+            }else {
+                for (int h = start_index; h < kj_interchange_3;h++) {
+                    stationlists.add(new StationList(station_name_list[h],h));
+                }
+            }
+
+            from_val = "LRT%25" + from_val.replaceAll(" ", "%25");
+            to_val = "LRT%25" + to_val.replaceAll(" ", "%25");
+
+            fareBuilder = new FareBuilder(from_val, to_val, this);
+
+            Log.d("TRIP",ktm_track_end);
+
+            Log.d("TRIP",Integer.toString(end_index));
+
+            if(ktm_track_end.equals("A")){
+
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "Displayed cost is for LRT fares only");
+
+                if(end_index == 131){end_index = 98;}
+                else if(end_index == 132){end_index = 99;}
+                else if(end_index == 133){end_index = 100;}
+                else if(end_index == 134){end_index = 101;}
+
+                for(int j = 101;j >= end_index;j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
                 }
 
-                from_val = "LRT%25" + from_val.replaceAll(" ", "%25");
-                to_val = "LRT%25" + to_val.replaceAll(" ", "%25");
+            }else if(ktm_track_end.equals("B")){
 
-                fareBuilder = new FareBuilder(from_val, to_val, this);
-
-                Log.d("TRIP",ktm_track_end);
-
-                Log.d("TRIP",Integer.toString(end_index));
-
-                if(ktm_track_end.equals("A")){
-
-                        message_text.setText("We couldn't calculate the fare for KTM. " +
-                                "Displayed cost is for LRT fares only");
-
-                        if(end_index == 131){end_index = 98;}
-                        else if(end_index == 132){end_index = 99;}
-                        else if(end_index == 133){end_index = 100;}
-                        else if(end_index == 134){end_index = 101;}
-
-                        for(int j = 101;j >= end_index;j--){
-                            stationlists.add(new StationList(station_name_list[j]));
-                        }
-
-                }else if(ktm_track_end.equals("B")){
-
-                        message_text.setText("We couldn't calculate the fare for KTM. " +
-                                "Displayed cost is for LRT fares only");
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "Displayed cost is for LRT fares only");
 
 
-                        for(int j = 101;j <= end_index;j++){
-                            stationlists.add(new StationList(station_name_list[j]));
-                        }
-
-                }else if(ktm_track_end.equals("C")){
-
-                        message_text.setText("We couldn't calculate the fare for KTM. " +
-                                "               Displayed cost is for LRT fares only");
-
-                        for(int j = 134;j >= end_index;j--){
-                            stationlists.add(new StationList(station_name_list[j]));
-                        }
-
-                }else if(ktm_track_end.equals("D")){
-
-                        message_text.setText("We couldn't calculate the fare for KTM. " +
-                                "               Displayed cost is for LRT fares only");
-
-                        for(int j = 134;j <= end_index;j++){
-                            stationlists.add(new StationList(station_name_list[j]));
-                        }
+                for(int j = 101;j <= end_index;j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
                 }
+
+            }else if(ktm_track_end.equals("C")){
+
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "               Displayed cost is for LRT fares only");
+
+                for(int j = 134;j >= end_index;j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+
+            }else if(ktm_track_end.equals("D")){
+
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "               Displayed cost is for LRT fares only");
+
+                for(int j = 134;j <= end_index;j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+            }
 
         }else if(indice.equals("KTAG")){
 
-                if(ktm_track.equals("A")){
+            if(ktm_track.equals("A")){
 
-                    message_text.setText("We couldn't calculate the fare for KTM. " +
-                            "Displayed cost is for LRT fares only");
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "Displayed cost is for LRT fares only");
 
-                    for(int j = start_index;j <= 101;j++){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
-
-                }else if(ktm_track.equals("B")){
-
-                    message_text.setText("We couldn't calculate the fare for KTM. " +
-                            "Displayed cost is for LRT fares only");
-
-                    for(int j = start_index;j >= 101;j--){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
-
-                }else if(ktm_track.equals("C")){
-
-                    message_text.setText("We couldn't calculate the fare for KTM. " +
-                            "Displayed cost is for LRT fares only");
-
-                    for(int j = start_index;j <= 134;j++){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
-
-                }else if(ktm_track.equals("D")) {
-
-                    message_text.setText("We couldn't calculate the fare for KTM. " +
-                            "Displayed cost is for LRT fares only");
-
-                    for (int j = start_index; j >= 134; j--) {
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
+                for(int j = start_index;j <= 101;j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
                 }
 
-                for(int h = kj_interchange_3;h >= kj_interchange;h--){
-                    stationlists.add(new StationList(station_name_list[h]));
+            }else if(ktm_track.equals("B")){
+
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "Displayed cost is for LRT fares only");
+
+                for(int j = start_index;j >= 101;j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
                 }
 
-                if(end_index > ag_interchange){
+            }else if(ktm_track.equals("C")){
 
-                    for(int k = ag_interchange;k <= end_index;k++){
-                        stationlists.add(new StationList(station_name_list[k]));
-                    }
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "Displayed cost is for LRT fares only");
 
-                }else{
-                    for(int k = ag_interchange;k >= end_index;k--){
-                        stationlists.add(new StationList(station_name_list[k]));
-                    }
+                for(int j = start_index;j <= 134;j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
                 }
 
-                from_val = "KL Sentral";
+            }else if(ktm_track.equals("D")) {
 
-                from_val = "LRT%25" + from_val.replaceAll(" ", "%25");
-                to_val = "LRT%25" + to_val.replaceAll(" ", "%25");
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "Displayed cost is for LRT fares only");
 
-                fareBuilder = new FareBuilder(from_val, to_val, this);
+                for (int j = start_index; j >= 134; j--) {
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+            }
+
+            for(int h = kj_interchange_3;h >= kj_interchange;h--){
+                stationlists.add(new StationList(station_name_list[h],h));
+            }
+
+            if(end_index > ag_interchange){
+
+                for(int k = ag_interchange;k <= end_index;k++){
+                    stationlists.add(new StationList(station_name_list[k],k));
+                }
+
+            }else{
+                for(int k = ag_interchange;k >= end_index;k--){
+                    stationlists.add(new StationList(station_name_list[k],k));
+                }
+            }
+
+            from_val = "KL Sentral";
+
+            from_val = "LRT%25" + from_val.replaceAll(" ", "%25");
+            to_val = "LRT%25" + to_val.replaceAll(" ", "%25");
+
+            fareBuilder = new FareBuilder(from_val, to_val, this);
 
         }else if(indice.equals("AGKT")){
 
 
-                if(start_index > ag_interchange){
-                    for(int j = start_index;j >= ag_interchange;j--){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
-                }else{
-                    for(int j = start_index;j <= ag_interchange;j++){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
+            if(start_index > ag_interchange){
+                for(int j = start_index;j >= ag_interchange;j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+            }else{
+                for(int j = start_index;j <= ag_interchange;j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+            }
+
+            for(int k = kj_interchange;k <= kj_interchange_3;k++){
+                stationlists.add(new StationList(station_name_list[k],k));
+            }
+
+            if(ktm_track_end.equals("A")){
+
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "Displayed cost is for LRT fares only");
+
+                if(end_index == 131){end_index = 98;}
+                else if(end_index == 132){end_index = 99;}
+                else if(end_index == 133){end_index = 100;}
+                else if(end_index == 134){end_index = 101;}
+
+                for(int j = 101;j >= end_index;j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
                 }
 
-                for(int k = kj_interchange;k <= kj_interchange_3;k++){
-                    stationlists.add(new StationList(station_name_list[k]));
+            }else if(ktm_track_end.equals("B")){
+
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "Displayed cost is for LRT fares only");
+
+
+                for(int j = 101;j <= end_index;j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
                 }
 
-                if(ktm_track_end.equals("A")){
+            }else if(ktm_track_end.equals("C")){
 
-                    message_text.setText("We couldn't calculate the fare for KTM. " +
-                            "Displayed cost is for LRT fares only");
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "               Displayed cost is for LRT fares only");
 
-                    if(end_index == 131){end_index = 98;}
-                    else if(end_index == 132){end_index = 99;}
-                    else if(end_index == 133){end_index = 100;}
-                    else if(end_index == 134){end_index = 101;}
-
-                    for(int j = 101;j >= end_index;j--){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
-
-                }else if(ktm_track_end.equals("B")){
-
-                    message_text.setText("We couldn't calculate the fare for KTM. " +
-                            "Displayed cost is for LRT fares only");
-
-
-                    for(int j = 101;j <= end_index;j++){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
-
-                }else if(ktm_track_end.equals("C")){
-
-                    message_text.setText("We couldn't calculate the fare for KTM. " +
-                            "               Displayed cost is for LRT fares only");
-
-                    for(int j = 134;j >= end_index;j--){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
-
-                }else if(ktm_track_end.equals("D")){
-
-                    message_text.setText("We couldn't calculate the fare for KTM. " +
-                            "               Displayed cost is for LRT fares only");
-
-                    for(int j = 134;j <= end_index;j++){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
+                for(int j = 134;j >= end_index;j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
                 }
+
+            }else if(ktm_track_end.equals("D")){
+
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "               Displayed cost is for LRT fares only");
+
+                for(int j = 134;j <= end_index;j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+            }
 
             to_val = "KL Sentral";
 
@@ -792,106 +810,108 @@ public class ResultActivity extends AppCompatActivity {
 
         }else if(indice.equals("KTML")){
 
-                if(ktm_track.equals("A")){
+            if(ktm_track.equals("A")){
 
-                        message_text.setText("We couldn't calculate the fare for KTM. " +
-                                "               Displayed cost is for LRT fares only");
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "               Displayed cost is for LRT fares only");
 
-                        for(int j = start_index;j <= 101;j++){
-                            stationlists.add(new StationList(station_name_list[j]));
-                        }
-
-                }else if(ktm_track.equals("B")){
-
-                        message_text.setText("We couldn't calculate the fare for KTM. " +
-                                "               Displayed cost is for LRT fares only");
-
-                        for(int j = start_index;j >= 101;j--){
-                            stationlists.add(new StationList(station_name_list[j]));
-                        }
-
-                }else if(ktm_track.equals("C")){
-
-                        message_text.setText("We couldn't calculate the fare for KTM. " +
-                                "               Displayed cost is for LRT fares only");
-
-                        for(int j = start_index;j <= 134;j++){
-                            stationlists.add(new StationList(station_name_list[j]));
-                        }
-
-                }else if(ktm_track.equals("D")){
-
-                        message_text.setText("We couldn't calculate the fare for KTM. " +
-                                "               Displayed cost is for LRT fares only");
-
-                        for(int j = start_index;j >= 134;j--){
-                            stationlists.add(new StationList(station_name_list[j]));
-                        }
+                for(int j = start_index;j <= 101;j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
                 }
 
-                from_val = "Kl Sentral";
+            }else if(ktm_track.equals("B")){
 
-                for(int h = 71;h <= end_index;h++){
-                    stationlists.add(new StationList(station_name_list[h]));
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "               Displayed cost is for LRT fares only");
+
+                for(int j = start_index;j >= 101;j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
                 }
 
-                from_val = "Monorail%25Station%25" + from_val.replaceAll(" ", "%25");
-                to_val = "Monorail%25Station%25" + to_val.replaceAll(" ", "%25");
+            }else if(ktm_track.equals("C")){
 
-                fareBuilder = new FareBuilder(from_val, to_val, this);
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "               Displayed cost is for LRT fares only");
+
+                for(int j = start_index;j <= 134;j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+
+            }else if(ktm_track.equals("D")){
+
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "               Displayed cost is for LRT fares only");
+
+                for(int j = start_index;j >= 134;j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+            }
+
+            from_val = "Kl Sentral";
+
+            for(int h = 71;h <= end_index;h++){
+                stationlists.add(new StationList(station_name_list[h],h));
+            }
+
+            from_val = "Monorail%25Station%25" + from_val.replaceAll(" ", "%25");
+            to_val = "Monorail%25Station%25" + to_val.replaceAll(" ", "%25");
+
+            fareBuilder = new FareBuilder(from_val, to_val, this);
 
 
         }else if(indice.equals("MLKT")){
 
-                to_val = "Kl Sentral";
+            to_val = "Kl Sentral";
 
-                for(int h = start_index;h >= 71;h--){
-                    stationlists.add(new StationList(station_name_list[h]));
+            for(int h = start_index;h >= 71;h--){
+                stationlists.add(new StationList(station_name_list[h],h));
+            }
+
+            from_val = "Monorail%25Station%25" + from_val.replaceAll(" ", "%25");
+            to_val = "Monorail%25Station%25" + to_val.replaceAll(" ", "%25");
+
+            fareBuilder = new FareBuilder(from_val, to_val, this);
+
+            if(ktm_track_end.equals("A")){
+
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "               Displayed cost is for LRT fares only");
+
+                for(int j = start_index;j <= 101;j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
                 }
 
-                from_val = "Monorail%25Station%25" + from_val.replaceAll(" ", "%25");
-                to_val = "Monorail%25Station%25" + to_val.replaceAll(" ", "%25");
+            }else if(ktm_track_end.equals("B")){
 
-                fareBuilder = new FareBuilder(from_val, to_val, this);
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "               Displayed cost is for LRT fares only");
 
-                if(ktm_track_end.equals("A")){
-
-                    message_text.setText("We couldn't calculate the fare for KTM. " +
-                            "               Displayed cost is for LRT fares only");
-
-                    for(int j = start_index;j <= 101;j++){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
-
-                }else if(ktm_track_end.equals("B")){
-
-                    message_text.setText("We couldn't calculate the fare for KTM. " +
-                            "               Displayed cost is for LRT fares only");
-
-                    for(int j = start_index;j >= 101;j--){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
-
-                }else if(ktm_track_end.equals("C")){
-
-                    message_text.setText("We couldn't calculate the fare for KTM. " +
-                            "               Displayed cost is for LRT fares only");
-
-                    for(int j = start_index;j <= 134;j++){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
-
-                }else if(ktm_track_end.equals("D")){
-
-                    message_text.setText("We couldn't calculate the fare for KTM. " +
-                            "               Displayed cost is for LRT fares only");
-
-                    for(int j = start_index;j >= 134;j--){
-                        stationlists.add(new StationList(station_name_list[j]));
-                    }
+                for(int j = start_index;j >= 101;j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
                 }
+
+            }else if(ktm_track_end.equals("C")){
+
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "               Displayed cost is for LRT fares only");
+
+                for(int j = start_index;j <= 134;j++){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+
+            }else if(ktm_track_end.equals("D")){
+
+                message_text.setText("We couldn't calculate the fare for KTM. " +
+                        "               Displayed cost is for LRT fares only");
+
+                for(int j = start_index;j >= 134;j--){
+                    stationlists.add(new StationList(station_name_list[j],j));
+                }
+            }
 
         }
+
+        final String temp = indice;
 
         StationListAdapter adapter = new StationListAdapter(ig_stat,ResultActivity.this, stationlists);
 
@@ -901,75 +921,140 @@ public class ResultActivity extends AppCompatActivity {
             @Override
             public void onSuccess(String result) {
 
-                try{
 
-                    JSONObject jsonObject = new JSONObject(result);
+                if(temp.equals("KTKT")){
 
-                    String routes = jsonObject.getJSONArray("routes").get(0).toString();
+                    try{
 
-                    JSONObject jsonObject1 = new JSONObject(routes);
+                        JSONObject jsonObject = new JSONObject(result);
 
-                    String fare = jsonObject1.getString("fare");
+                        String routes = jsonObject.getJSONArray("routes").get(0).toString();
 
-                    JSONObject jsonObject2 = new JSONObject(fare);
+                        JSONObject jsonObject1 = new JSONObject(routes);
 
-                    String price = jsonObject2.getString("text");
+                        String legs = jsonObject1.getJSONArray("legs").get(0).toString();
 
-                    Toast.makeText(ResultActivity.this, "PRICE : " + price, Toast.LENGTH_SHORT).show();
-
-                    from_btn.setText(from);
-                    to_btn.setText(to);
-                    price_text.setText("Cost : " + price);
-
-                    String legs = jsonObject1.getJSONArray("legs").get(0).toString();
-
-                    JSONObject jsonObject3 = new JSONObject(legs);
-
-                    //===============================================ARRIVAL
-
-                    String arrival_time = jsonObject3.getString("arrival_time");
-
-                    JSONObject jsonObject4 = new JSONObject(arrival_time);
-
-                    String arrival_time_val = jsonObject4.getString("text");
-
-                    arrival_text.setText(arrival_time_val);
+                        JSONObject jsonObject2 = new JSONObject(legs);
 
 
-                    //===============================================DEPARTURE
+                        from_btn.setText(from);
+                        to_btn.setText(to);
+                        price_text.setText("");
 
-                    String departure_time = jsonObject3.getString("departure_time");
+                        //set arrival time======================================
+                        String arrival = jsonObject2.getString("arrival_time");
 
-                    JSONObject jsonObject5 = new JSONObject(departure_time);
+                        JSONObject jsonObject3 = new JSONObject(arrival);
 
-                    String departure_time_val = jsonObject5.getString("text");
+                        String arrival_value = jsonObject3.getString("text");
 
-                    departure_text.setText(departure_time_val);
+                        arrival_text.setText(arrival_value);
 
-                    //===============================================DURATION
+                        //set departure time====================================
 
-                    String duration = jsonObject3.getString("duration");
+                        String departure = jsonObject2.getString("departure_time");
 
-                    JSONObject jsonObject6 = new JSONObject(duration);
+                        JSONObject jsonObject4 = new JSONObject(departure);
 
-                    String duration_val = jsonObject6.getString("text");
+                        String departure_value = jsonObject4.getString("text");
 
-                    duration_text.setText(duration_val);
+                        departure_text.setText(departure_value);
 
-                    //===============================================DISTANCE
+                        //set eta ===============================================
 
-                    String distance = jsonObject3.getString("distance");
+                        String eta = jsonObject2.getString("duration");
 
-                    JSONObject jsonObject7 = new JSONObject(distance);
+                        JSONObject jsonObject5 = new JSONObject(eta);
 
-                    String distance_val = jsonObject7.getString("text");
+                        String eta_value = jsonObject5.getString("text");
 
-                    distance_text.setText(distance_val);
+                        duration_text.setText(eta_value);
+
+                        //set distance ===========================================
+
+                        String distance = jsonObject2.getString("distance");
+
+                        JSONObject jsonObject6 = new JSONObject(distance);
+
+                        String distance_value = jsonObject6.getString("text");
+
+                        distance_text.setText(distance_value);
+
+                    }catch(Exception e){
+
+                    }
+
+                }else{
+
+                    try{
+
+                        JSONObject jsonObject = new JSONObject(result);
+
+                        String routes = jsonObject.getJSONArray("routes").get(0).toString();
+
+                        JSONObject jsonObject1 = new JSONObject(routes);
+
+                        String fare = jsonObject1.getString("fare");
+
+                        JSONObject jsonObject2 = new JSONObject(fare);
+
+                        String price = jsonObject2.getString("text");
+
+                        from_btn.setText(from);
+                        to_btn.setText(to);
+                        price_text.setText("Cost : " + price);
+
+                        String legs = jsonObject1.getJSONArray("legs").get(0).toString();
+
+                        JSONObject jsonObject3 = new JSONObject(legs);
+
+                        //===============================================ARRIVAL
+
+                        String arrival_time = jsonObject3.getString("arrival_time");
+
+                        JSONObject jsonObject4 = new JSONObject(arrival_time);
+
+                        String arrival_time_val = jsonObject4.getString("text");
+
+                        arrival_text.setText(arrival_time_val);
 
 
-                }catch(Exception e){
+                        //===============================================DEPARTURE
+
+                        String departure_time = jsonObject3.getString("departure_time");
+
+                        JSONObject jsonObject5 = new JSONObject(departure_time);
+
+                        String departure_time_val = jsonObject5.getString("text");
+
+                        departure_text.setText(departure_time_val);
+
+                        //===============================================DURATION
+
+                        String duration = jsonObject3.getString("duration");
+
+                        JSONObject jsonObject6 = new JSONObject(duration);
+
+                        String duration_val = jsonObject6.getString("text");
+
+                        duration_text.setText(duration_val);
+
+                        //===============================================DISTANCE
+
+                        String distance = jsonObject3.getString("distance");
+
+                        JSONObject jsonObject7 = new JSONObject(distance);
+
+                        String distance_val = jsonObject7.getString("text");
+
+                        distance_text.setText(distance_val);
+
+                    }catch(Exception e){
+
+                    }
 
                 }
+
             }
         });
 

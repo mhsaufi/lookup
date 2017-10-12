@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.user.lookup.Adapter.InteractionListAdapter;
 import com.example.user.lookup.Builder.InteractionList;
@@ -49,84 +50,146 @@ public class InteractionActivity extends AppCompatActivity {
 
                 try{
 
+
                     JSONObject object = new JSONObject(result);
-                    String results = object.getString("results");
+                    String response = object.getString("response");
 
-                    JSONArray object1 = new JSONArray(results);
+                    JSONObject object1 = new JSONObject(response);
 
-                    int limit = object1.length() - 1;
+                    String headerLocation = object1.getString("headerLocation");
+
+                    getSupportActionBar().setTitle(headerLocation);
+
+                    String groups = object1.getJSONArray("groups").get(0).toString();
+
+                    JSONObject object2 = new JSONObject(groups);
+
+                    String items = object2.getString("items");
+
+                    JSONArray jsonArray = new JSONArray(items);
+
+                    int limit = jsonArray.length() - 1;
 
                     for(int i = 0;i < limit;i++){
 
-                        String test = object1.get(i).toString();
+                        String summary = jsonArray.get(i).toString();
 
-                        JSONObject object2 = new JSONObject(test);
+                        JSONObject jsonObject = new JSONObject(summary);
 
-                        String name;
-                        try{ name = object2.getString("name");}catch(Exception e){ name = "Unknownn";}
+                        String venue = jsonObject.getString("venue");
 
-                        String icon;
+                        JSONObject jsonObject3 = new JSONObject(venue);
+
+                        String name = jsonObject3.getString("name");
+
+                        String rating = jsonObject3.getString("rating");
+
+                        String location = jsonObject3.getString("location");
+
+                        //get another info
+
+                        String hours = "";
+                        Boolean hours_value = false;
+                        String status = "No status";
+                        String contact = "";
+                        String phone = "Not given";
+                        String test = "";
+                        String comment = "";
+
                         try{
 
-                            icon = object2.getString("icon");
+                            hours = jsonObject3.getString("hours");
+                            JSONObject jsonObject1 = new JSONObject(hours);
+                            hours_value = jsonObject1.getBoolean("isOpen");
+
+                            if(hours_value == true){
+                                test = "open";
+                            }else{
+                                test = "close";
+                            }
+
+//                            Log.d("TESTER",name + ", " + test);
+                            status = jsonObject1.getString("status");
 
                         }catch(Exception e){
 
-                            icon = "https://www.iconfinder.com/data/icons/gray-toolbar-4/512/question-512.png";
+//                            Log.d("TESTER",name);
 
                         }
 
-                        String rating;
-                        try{ rating = object2.getString("rating");}catch(Exception e){ rating = "Not rated";}
-
-                        String address;
-                        try{ address = object2.getString("vicinity");}catch(Exception e){ address = name;}
-
-                        String geometry = object2.getString("geometry");
-                        JSONObject object3 = new JSONObject(geometry);
-
-                        String location = object3.getString("location");
-                        JSONObject object4 = new JSONObject(location);
-
-                        String lat = object4.getString("lat");
-                        String lng = object4.getString("lng");
-
-                        //get photo
-                        String photos = "";
-                        String index = "";
-                        String html_attributions = "";
-                        String photo_url = "";
-                        String real_photo_url = "";
-
                         try{
-
-                            photos = object2.getString("photos");
-                            JSONArray jsonArray = new JSONArray(photos);
-                            index = jsonArray.get(0).toString();
-
-                            JSONObject jsonObject = new JSONObject(index);
-                            html_attributions = jsonObject.getString("html_attributions");
-                            JSONArray jsonArray1 = new JSONArray(html_attributions);
-                            photo_url = jsonArray1.get(0).toString();
-
-                            real_photo_url = trimURL(photo_url);
+                            contact = jsonObject3.getString("contact");
+                            JSONObject jsonObject11 = new JSONObject(contact);
+                            phone = jsonObject11.getString("phone");
 
                         }catch(Exception e){
 
                         }
 
-                        Log.d("JSON",real_photo_url);
-                        Log.d("JSON",name);
-                        Log.d("JSON",address);
-                        Log.d("JSON",icon);
-                        Log.d("JSON",rating);
-                        Log.d("JSON",lat + " , " + lng);
+                        try{
 
-                        interactionlists.add(new InteractionList(name, icon, rating, address, lat, lng, real_photo_url));
+                            String text_comment = jsonObject.getString("tips");
 
+                            JSONArray jsonArray1 = new JSONArray(text_comment);
+
+                            String text = jsonArray1.get(0).toString();
+
+                            JSONObject jsonObject13 = new JSONObject(text);
+
+                            comment = jsonObject13.getString("text");
+
+                        }catch(Exception e){
+
+                        }
+
+                        //end another info
+
+                        //address
+                        JSONObject jsonObject4 = new JSONObject(location);
+
+                        String formatted_address = jsonObject4.getString("formattedAddress");
+
+                        JSONArray jsonArray1 = new JSONArray(formatted_address);
+
+                        int limit_2 = jsonArray1.length() - 1;
+
+                        String address = "";
+
+                        for(int j = 0;j < limit_2;j++){
+
+                            address += jsonArray1.get(j).toString();
+
+                        }
+
+                        String lat = jsonObject4.getString("lat");
+                        String lng = jsonObject4.getString("lng");
+
+                        String icon = "";
+                        String real_url = "";
+
+                        try{
+                            //get icon and photo
+                            String photos = jsonObject3.getString("featuredPhotos");
+
+                            JSONObject jsonObject5 = new JSONObject(photos);
+
+                            String groups_photo = jsonObject5.getJSONArray("items").get(0).toString();
+
+                            JSONObject jsonObject7 = new JSONObject(groups_photo);
+
+                            String prefix = jsonObject7.getString("prefix");
+                            String suffix = jsonObject7.getString("suffix");
+
+                            icon = prefix + "50x50" + suffix;
+                            real_url = prefix + "150x250" + suffix;
+
+                        }catch(Exception e){
+
+                            icon = "http://www.iconsdb.com/icons/preview/gray/google-place-optimization-xxl.png";
+
+                        }
+                        interactionlists.add(new InteractionList(name, icon, rating, address, lat, lng, real_url, hours_value, status, phone, comment));
                     }
-
-                    Log.d("KOTARAYA","KITAAA");
 
                     InteractionListAdapter adapter = new InteractionListAdapter(InteractionActivity.this, interactionlists);
 
@@ -134,7 +197,7 @@ public class InteractionActivity extends AppCompatActivity {
 
                 }catch(Exception e){
 
-                    Log.d("KOTARAYA","KITAAA : " + e.toString());
+//                    Log.d("KOTARAYA","KITAAA : " + e.toString());
 
                 }
 

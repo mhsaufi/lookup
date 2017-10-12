@@ -30,28 +30,16 @@ public class PlacesBuilder {
         this.context = context;
 
     }
-
+    // Using FourSquare Endpoint to list places around the given location
     public void lookPlace(final Callback call){
 
-        String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=";
+//        final String real_url = googlePlaceUrl();
 
-        final String location = main_point;
-
-        final String type = "&type=atm,bank,beauty_salon,book_store,bowling_alley,bus_station,cafe," +
-                            "car_repair,clothing_store,convenience_store,doctor," +
-                            "gas_station,gym,hair_care,hospital,laundry,mosque,movie_theater,night_club," +
-                            "pet_store,pharmacy,police,restaurant,shopping_mall,spa,train_station," +
-                            "transit_station,veterinary_care";
-
-        final String radius = "&radius=1000&key=";
-
-        final String key = "AIzaSyDcda4oK9STrZkUBC77NfWDVdsXEIPNrTY ";
-
-        final String real_url = url + location + type + radius + key;
+        final String real_url = fourSquarePlaceApi();
 
         Log.d("JSON",real_url);
 
-        StringRequest request = new StringRequest(Request.Method.POST, real_url, new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.GET, real_url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
@@ -62,7 +50,9 @@ public class PlacesBuilder {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(context,error.toString(),Toast.LENGTH_LONG ).show();
+
+                Toast.makeText(context,"UNKNOWN : " + error.toString(),Toast.LENGTH_LONG ).show();
+
             }
         }){
             @Override
@@ -78,7 +68,49 @@ public class PlacesBuilder {
         RequestQueue requestQueue = Volley.newRequestQueue(context);
         requestQueue.add(request);
 
+    }
 
+    public String googlePlaceUrl(){
+
+        String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=";
+        String location = main_point;
+        String type = "&type=atm,bank,beauty_salon,book_store,bowling_alley,bus_station,cafe," +
+                "car_repair,clothing_store,convenience_store,doctor," +
+                "gas_station,gym,hair_care,hospital,laundry,mosque,movie_theater,night_club," +
+                "pet_store,pharmacy,police,restaurant,shopping_mall,spa,train_station," +
+                "transit_station,veterinary_care";
+
+        String radius = "&radius=1000&key=";
+        String key = "AIzaSyDcda4oK9STrZkUBC77NfWDVdsXEIPNrTY ";
+
+        String real_url = url + location + type + radius + key;
+
+        return real_url;
+
+    }
+
+    public String fourSquarePlaceApi(){
+
+        String CLIENTID = "VDOX0VBX4VNV4ZV0GPONZ4ZRJEBXKHIAGH0NNNQDEGHPYMKR";
+
+        String CLIENTSECRET = "3KXSKE50Z0VGPMBSUXB2UBGN2QAYTAGNBPW1AI0BW5N01OMS";
+
+        String url = "https://api.foursquare.com/v2/venues/explore?";
+
+        String client_id = "client_id=" + CLIENTID;
+
+        String client_secret = "&client_secret=" + CLIENTSECRET + "&v=20170615";
+
+        String ll = "&ll=" + main_point;
+
+        String limit = "&limit=50";
+
+        String venuePhotos = "&venuePhotos=1";
+
+        String real_url = url + client_id + client_secret + ll + limit + venuePhotos;
+
+
+        return real_url;
     }
 
     public interface Callback{

@@ -7,18 +7,24 @@
             android:title="Home" />
 
         <item
+            android:id="@+id/nav_around_you"
+            android:icon="@drawable/lookup"
+            android:title="Lookup Around!"/>
+
+        <item
             android:id="@+id/nav_search"
             android:icon="@drawable/plan"
             android:title="Plan Journey" />
 
         <item
-            android:id="@+id/nav_fare"
-            android:icon="@drawable/fare"
-            android:title="Public Transit Fares" />
+            android:id="@+id/nav_about"
+            android:icon="@drawable/plan"
+            android:title="About LookUp!" />
 
-        <item
-            android:id="@+id/nav_around_you"
-            android:icon="@drawable/lookup"
-            android:title="Lookup Around!"/>
+        <!--<item-->
+            <!--android:id="@+id/nav_fare"-->
+            <!--android:icon="@drawable/fare"-->
+            <!--android:title="Public Transit Fares" />-->
+
 
 </menu>

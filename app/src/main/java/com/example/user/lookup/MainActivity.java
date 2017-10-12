@@ -1,11 +1,15 @@
 package com.example.user.lookup;
 
+import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,10 +20,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.user.lookup.Adapter.PlacesArrayAdapter;
 import com.google.android.gms.common.ConnectionResult;
@@ -37,11 +42,16 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         AdapterView.OnItemClickListener,
         GoogleApiClient.OnConnectionFailedListener ,
-        GoogleApiClient.ConnectionCallbacks, Button.OnClickListener{
+        GoogleApiClient.ConnectionCallbacks,
+        Button.OnClickListener{
 
     Intent intent;
     GoogleApiClient googleApiClient;
     AutoCompleteTextView autocompleteAddress;
+
+    String lat_,lng_;
+    Location current_location;
+    TextView locationstatus;
 
     // Autocomplete address variable
     static final String LOG_TAG = "MainActivity";
@@ -72,6 +82,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         Button lookup = (Button) findViewById(R.id.lookuphere);
+        locationstatus = (TextView) findViewById(R.id.locationstatus);
 
         Animation anim = AnimationUtils.loadAnimation(this,R.anim.bounce);
         lookup.setVisibility(View.INVISIBLE);
@@ -91,7 +102,6 @@ public class MainActivity extends AppCompatActivity
 
         this.googleApiClient.connect();
 
-
         autocompleteAddress.setThreshold(2);
         autocompleteAddress.setOnItemClickListener(mAutocompleteClickListener);
 
@@ -104,7 +114,55 @@ public class MainActivity extends AppCompatActivity
 
         lookup.setOnClickListener(this);
 
+        // Display device location status
+        if (ActivityCompat.checkSelfPermission(this,
+                android.Manifest.permission.ACCESS_FINE_LOCATION) !=
+                PackageManager.PERMISSION_GRANTED){
 
+            locationstatus.setText("Location : OFF");
+
+        }else{
+
+            locationstatus.setText("Location : ON");
+
+        }
+
+        LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        if (ActivityCompat.checkSelfPermission(this,
+                android.Manifest.permission.ACCESS_FINE_LOCATION) !=
+                PackageManager.PERMISSION_GRANTED){
+
+            Toast.makeText(this, "Location permission access is denied for this application. " +
+                    "Go to device permission setting and allow " +
+                            "this application to access your device location permission.",
+                    Toast.LENGTH_SHORT).show();
+        }else{
+
+            lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0, new android.location.LocationListener() {
+                @Override
+                public void onLocationChanged(Location location) {
+
+                }
+
+                @Override
+                public void onStatusChanged(String provider, int status, Bundle extras) {
+
+                }
+
+                @Override
+                public void onProviderEnabled(String provider) {
+                    locationstatus.setText("Location : ON");
+                    Toast.makeText(MainActivity.this, "Location Turned ON", Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onProviderDisabled(String provider) {
+                    locationstatus.setText("Location : OFF");
+                    Toast.makeText(MainActivity.this, "Location Turned OFF", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
 
     private AdapterView.OnItemClickListener mAutocompleteClickListener
@@ -173,10 +231,6 @@ public class MainActivity extends AppCompatActivity
 
             intent = new Intent(this, MainActivity.class);
 
-        } else if (id == R.id.nav_fare) {
-
-            intent = new Intent(this, FareActivity.class);
-
         }else if (id == R.id.nav_search) {
 
             intent = new Intent(this, SearchActivity.class);
@@ -186,7 +240,16 @@ public class MainActivity extends AppCompatActivity
             intent = new Intent(this, LookAroundActivity.class);
             intent.putExtra("INTERACTIONCENTER","Around Me");
 
+        }else if(id == R.id.nav_about){
+
+            intent = new Intent(this, AboutActivity.class);
+
         }
+//        else if (id == R.id.nav_fare) {
+//
+//            intent = new Intent(this, FareActivity.class);
+//
+//        }
 
         startActivity(intent);
 
@@ -214,9 +277,7 @@ public class MainActivity extends AppCompatActivity
     public void onClick(View v) {
 
         Intent interaction = new Intent(this, InteractionActivity.class);
-
         interaction.putExtra("INTERACTIONPOINT",lat+","+lon);
-
         this.startActivity(interaction);
 
     }

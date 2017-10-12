@@ -69,12 +69,8 @@ public class PlacesArrayAdapter extends ArrayAdapter<PlacesArrayAdapter.PlaceAut
 
     private ArrayList<PlaceAutocomplete> getPredictions(CharSequence constraint) {
 
-        Log.d("TESTINGNULL","GETPREDICTION");
-
         if (mGoogleApiClient != null) {
 
-            Log.d("TESTINGNULL","mGoogleApiCLient is not NULL");
-            Log.i(TAG, "Executing autocomplete query for: " + constraint);
             PendingResult<AutocompletePredictionBuffer> results =
                     Places.GeoDataApi
                             .getAutocompletePredictions(mGoogleApiClient, constraint.toString(),
